@@ -1,4 +1,3 @@
-
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
@@ -23,4 +22,16 @@ export const GlobalStyle = createGlobalStyle`
     body, input, textarea, button {
       font: 400 1rem Nunito, sans-serif;
     }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+      button {
+        cursor: pointer;
+    }
+
+    ul {
+    list-style: none;
+  }
 `

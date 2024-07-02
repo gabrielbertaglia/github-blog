@@ -1,9 +1,8 @@
 export const defaultTheme = {
   color: {
-
     white: '#fff',
 
-    'blue': '#3294F8',
+    blue: '#3294F8',
     'base-title': '#E7EDF4',
     'base-subtitle': '#C4D4E3',
     'base-text': '#AFC2D4',
@@ -18,6 +17,5 @@ export const defaultTheme = {
     'red-300': '#F75A68',
     'red-500': '#AB222E',
     'red-700': '#7A1921',
-  }
-
+  },
 } as const

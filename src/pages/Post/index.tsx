@@ -1,7 +1,3 @@
-export function Post(){
-  return (
-    <div>
-      Post
-    </div>
-  )
+export function Post() {
+  return <div>Post</div>
 }

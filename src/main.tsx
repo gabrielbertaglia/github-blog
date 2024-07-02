@@ -1,31 +1,26 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {App} from './App.tsx'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import { Blog } from './pages/Blog/index.tsx';
-import { Post } from './pages/Post/index.tsx';
+import { App } from './App.tsx'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Blog } from './pages/Blog/index.tsx'
+import { Post } from './pages/Post/index.tsx'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Blog />,
       },
       {
-        path: "/post/:id",
+        path: '/post/:id',
         element: <Post />,
-      }
-    ]
+      },
+    ],
   },
-]);
-
-
+])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
