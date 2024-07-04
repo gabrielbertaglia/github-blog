@@ -1,19 +1,19 @@
+import { Post } from '../../../@types/github-posts'
+import { relativeDateFormatter } from '../../../utils/formatter'
 import { PostContainer, PostHeader } from './styles'
 
-export function Posts() {
+interface PostProps {
+  post: Post
+}
+
+export function Posts({ post }: PostProps) {
   return (
-    <PostContainer to="post/1">
+    <PostContainer to={`/post/${post.number}`}>
       <PostHeader>
-        <strong>JavaScript data types and data structures</strong>
-        <span>Há 1 dia atrás</span>
+        <strong>{post.title}</strong>
+        <span>{relativeDateFormatter(post.created_at)}</span>
       </PostHeader>
-      <span>
-        Programming languages all have built-in data structures, but these often
-        differ from one language to another. This article attempts to list the
-        built-in data structures available in JavaScript and what properties
-        they have. These can be used to build other data structures. Wherever
-        possible, comparisons with other languages are drawn.
-      </span>
+      <span>{post.body}</span>
     </PostContainer>
   )
 }

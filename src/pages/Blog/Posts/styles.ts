@@ -19,7 +19,7 @@ export const PostContainer = styled(Link)`
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 5;
   }
 `
 
@@ -29,6 +29,11 @@ export const PostHeader = styled.div`
   margin-bottom: 1.25rem;
 
   strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     flex: 1;
     ${globalStyles.fonts.titleM}
   }

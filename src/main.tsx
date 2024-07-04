@@ -5,6 +5,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Blog } from './pages/Blog/index.tsx'
 import { Post } from './pages/Post/index.tsx'
 
+import { ptBR } from 'date-fns/locale'
+import { setDefaultOptions } from 'date-fns'
+setDefaultOptions({ locale: ptBR })
+
 const router = createBrowserRouter([
   {
     path: '/',

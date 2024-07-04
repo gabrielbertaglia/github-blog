@@ -1,10 +1,22 @@
 import { createGlobalStyle } from 'styled-components'
+import firaCode from '../assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf'
 
 export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: 'FiraCode';
+    src: url(${firaCode}) format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  code {
+    font-family: 'FiraCode', monospace;
   }
 
   :focus {
@@ -20,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body, input, textarea, button {
-      font: 400 1rem Nunito, sans-serif;
+      font: 400 1rem 'Nunito', sans-serif;
     }
     a {
       color: inherit;
