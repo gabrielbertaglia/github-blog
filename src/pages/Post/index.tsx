@@ -21,6 +21,7 @@ import { Spinner } from '../../components/Spinner'
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import rehypeExternalLinks from 'rehype-external-links'
 
 export function Post() {
   const [loadingPostDetails, setLoadingPostDetails] = useState(true)
@@ -88,6 +89,7 @@ export function Post() {
           <Spinner />
         ) : (
           <ReactMarkdown
+            rehypePlugins={[[rehypeExternalLinks, { target: '_blank' }]]}
             components={{
               code({ inline, className, children, ...props }: any) {
                 const match = /language-(\w+)/.exec(className || '')
