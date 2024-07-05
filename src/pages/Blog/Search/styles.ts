@@ -24,7 +24,8 @@ export const SearchContainer = styled.form`
     ${globalStyles.fonts.input}
 
     &:disabled {
-      background-color: red;
+      background-color: ${(props) => props.theme.color['base-border']};
+      cursor: not-allowed;
     }
   }
 `
