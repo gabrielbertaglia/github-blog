@@ -21,6 +21,8 @@ export interface GithubContextType {
   postDetails: Post
   fetchPosts: (query?: string) => Promise<void>
   fetchPostDetails: () => Promise<void>
+
+  setPosts: React.Dispatch<React.SetStateAction<Post[]>>
 }
 
 const username = import.meta.env.VITE_GITHUB_USERNAME
@@ -41,7 +43,6 @@ export function GithubProvider({ children }: GithubProviderProps) {
       const response = await api.get(
         `/search/issues?q=${query}%20repo:${username}/${repo}`,
       )
-      console.log(response.data)
       setPosts(response.data.items)
     } catch (err) {
       alert(
@@ -83,6 +84,7 @@ export function GithubProvider({ children }: GithubProviderProps) {
         profile,
         fetchPosts,
         fetchPostDetails,
+        setPosts,
       }}
     >
       {children}

@@ -26,7 +26,7 @@ export function Blog() {
     <BlogContainer>
       <>
         <Profile />
-        <Search />
+        <Search setLoadingPosts={setLoadingPosts} />
         {loadingPosts ? (
           <Spinner />
         ) : (

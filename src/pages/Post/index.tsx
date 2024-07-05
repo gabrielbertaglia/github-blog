@@ -84,30 +84,34 @@ export function Post() {
         )}
       </PostContainerHeader>
       <PostContent>
-        <ReactMarkdown
-          components={{
-            code({ inline, className, children, ...props }: any) {
-              const match = /language-(\w+)/.exec(className || '')
+        {loadingPostDetails ? (
+          <Spinner />
+        ) : (
+          <ReactMarkdown
+            components={{
+              code({ inline, className, children, ...props }: any) {
+                const match = /language-(\w+)/.exec(className || '')
 
-              return !inline && match ? (
-                <SyntaxHighlighter
-                  style={dracula}
-                  PreTag="div"
-                  language={match[1]}
-                  {...props}
-                >
-                  {String(children).replace(/\n$/, '')}
-                </SyntaxHighlighter>
-              ) : (
-                <code className={className} {...props}>
-                  {children}
-                </code>
-              )
-            },
-          }}
-        >
-          {postDetails.body}
-        </ReactMarkdown>
+                return !inline && match ? (
+                  <SyntaxHighlighter
+                    style={dracula}
+                    PreTag="div"
+                    language={match[1]}
+                    {...props}
+                  >
+                    {String(children).replace(/\n$/, '')}
+                  </SyntaxHighlighter>
+                ) : (
+                  <code className={className} {...props}>
+                    {children}
+                  </code>
+                )
+              },
+            }}
+          >
+            {postDetails.body}
+          </ReactMarkdown>
+        )}
       </PostContent>
     </PostContainer>
   )

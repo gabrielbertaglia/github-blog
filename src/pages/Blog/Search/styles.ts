@@ -22,5 +22,9 @@ export const SearchContainer = styled.form`
   }
   input {
     ${globalStyles.fonts.input}
+
+    &:disabled {
+      background-color: red;
+    }
   }
 `
